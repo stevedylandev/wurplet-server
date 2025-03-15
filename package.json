@@ -1,0 +1,19 @@
+{
+  "name": "wurplet-server",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "prod:create-tables": "wrangler d1 execute wurpletdb --file=./src/db/create-tables.sql --remote"
+  },
+  "dependencies": {
+    "@farcaster/auth-client": "^0.3.0",
+    "hono": "^4.7.4",
+    "kysely": "^0.27.6",
+    "kysely-d1": "^0.3.0",
+    "viem": "^2.23.10"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "wrangler": "^3.109.2"
+  }
+}
