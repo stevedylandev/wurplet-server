@@ -27,12 +27,11 @@
       "database_name": "wurpletdb",
       "database_id": "e138fff0-f3a4-4e33-998e-5b465544ffaf"
     }
-  ]
+  ],
   // "ai": {
   //   "binding": "AI"
   // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
-  // }
+  "observability": {
+    "enabled": true
+  }
 }

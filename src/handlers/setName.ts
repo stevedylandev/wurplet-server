@@ -25,7 +25,7 @@ export async function setName(c: Context): Promise<Response> {
 
   const { data, success, fid } = await appClient.verifySignInMessage({
     nonce: siwfNonce,
-    domain: 'steves-macbook-pro.dachshund-deneb.ts.net',
+    domain: 'wurplet.xyz',
     message: siwfMessage,
     signature: siwfSignature as `0x`,
   });
