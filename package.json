@@ -6,6 +6,7 @@
     "prod:create-tables": "wrangler d1 execute wurpletdb --file=./src/db/create-tables.sql --remote"
   },
   "dependencies": {
+    "@ensdomains/content-hash": "^3.0.0",
     "@farcaster/auth-client": "^0.3.0",
     "hono": "^4.7.4",
     "kysely": "^0.27.6",
