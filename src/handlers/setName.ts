@@ -30,6 +30,10 @@ export async function setName(c: Context): Promise<Response> {
     signature: siwfSignature as `0x`,
   });
 
+  if (!success) {
+    return c.json({ error: "Unauthorized SIWF" }, { status: 401 })
+  }
+
   let verificationRequest = await fetch(`https://hub.pinata.cloud/v1/verificationsByFid?fid=${fid}&address=${owner}`)
 
   // If the first request fails, try the fallback hub
@@ -39,7 +43,7 @@ export async function setName(c: Context): Promise<Response> {
 
     // If both requests fail, throw an error
     if (!verificationRequest.ok) {
-      throw new Error('Invalid Address')
+      return c.json({ error: "Invalid Address" }, { status: 401 })
     }
   }
 
