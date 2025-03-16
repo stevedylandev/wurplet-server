@@ -17,10 +17,11 @@ const schema = z.object({
 // Implements EIP-3668
 // https://eips.ethereum.org/EIPS/eip-3668
 export const getCcipRead = async (c: Context) => {
-  const safeParse = schema.safeParse(c.req.param)
+  const { sender, data } = c.req.param()
+  const safeParse = schema.safeParse({ sender, data })
 
   if (!safeParse.success) {
-    return Response.json({ error: safeParse.error }, { status: 400 })
+    return c.json({ error: safeParse.error }, { status: 400 })
   }
 
   let result: string
